@@ -6,12 +6,17 @@ Created on Thu Nov 23 23:19:29 2023
 @author: leongedzo
 """
 
+#---------------------------------------------------------
+#Step 1: Importing libraries
+
 import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from statsmodels.tsa.stattools import adfuller
 
+#---------------------------------------------------------
+#Step 2: Identifying paths as variables
 
 pathExp = '/Users/leongedzo/python_pers/stock_data/'
 ExpName = 'NYSE/'
@@ -19,7 +24,10 @@ ExpName = 'NYSE/'
 pathImp = '/Users/leongedzo/python_pers/stock_data_cleaned/'
 ImpName = 'NYSE_stationary_lags/'
 
-#=======================================================
+#---------------------------------------------------------
+#Step 3: For every stock if there is more than 100 records (sufficient sample for time-series) then test the stationarity with ADF test.
+#If it is not stationary then make it stationary and save data with lags 
+
 k = 0
 countNS = 0
 countS = 0
