@@ -33,7 +33,7 @@ def left(s, amount):
     return s[:amount]
 
 #------------------------------------------------------------------------------
-#Step 3: for every file if the correlation is more than a threshold then extract it
+#Step 3: for every file if any of the correlation pairs is more than a threshold then extract it
 
 
 insides = []
