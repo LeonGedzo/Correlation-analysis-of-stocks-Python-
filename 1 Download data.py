@@ -1,11 +1,11 @@
---------------------------------------------------------
+#--------------------------------------------------------
 #Step 1: Importing libraries 
 
 import pandas as pd
 import time as ti
 import datetime as dt
 import csv
---------------------------------------------------------
+#--------------------------------------------------------
 #Step 2: Preparing data and settings for variables
 
 pathExp = '/Users/leongedzo/python_pers/req_data_external/' #pathExp - for csv with tickers' names
@@ -21,7 +21,7 @@ ImpTickerFile.close()
 period1 = int(ti.mktime(dt.datetime(2010,1,1,00,1).timetuple()))
 period2 = int(ti.mktime(dt.datetime(2023,10,31,23,59).timetuple()))
 freq = '1wk' #1d 1m
---------------------------------------------------------
+#--------------------------------------------------------
 #Step 3: For every stock name adjust the link of downloading data and save data for every ticker
 
 s = 1
