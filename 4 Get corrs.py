@@ -5,6 +5,8 @@ Created on Fri Dec  1 11:19:28 2023
 
 @author: leongedzo
 """
+#------------------------------------------------------------------------------
+#Step 1: Import libraries
 
 import os
 import pandas as pd
@@ -12,7 +14,8 @@ import numpy as np
 import scipy as sp
 import matplotlib.pyplot as plt
 
-
+#------------------------------------------------------------------------------
+#Step 2: Identify paths and def functions
 pathExp = '/Users/leongedzo/python_pers/stock_data_cleaned/'
 ExpName = 'NYSE correlations 0.7/'#'NYSE_stationary_lags/' #'Test 10/'
 
@@ -28,6 +31,10 @@ def namestr(obj, namespace):
 
 def left(s, amount):
     return s[:amount]
+
+#------------------------------------------------------------------------------
+#Step 3: for every file if the correlation is more than a threshold then extract it
+
 
 insides = []
 
@@ -51,7 +58,7 @@ for fileA in os.scandir(pathExp + ExpName):
                 for i in dfa['Names']:
                     v += 1
                     #if i != 'D1a' and i != 'D1b':
-                    if dfa.iloc[v,3] <= -0.6:
+                    if dfa.iloc[v,3] <= 0.7: #threshhold
                         insides.append(dfa.iloc[v,1])
                         print(dfa.loc[[dfa.index[v]]])
                         #print(dfa.iloc())
