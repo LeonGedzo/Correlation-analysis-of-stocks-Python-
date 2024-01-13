@@ -5,6 +5,8 @@ Created on Tue Nov 21 21:27:25 2023
 
 @author: leongedzo
 """
+#----------------------------------------------------------------------
+#Step 1: Importing libraries
 
 import os
 import pandas as pd
@@ -12,6 +14,8 @@ import numpy as np
 import scipy as sp
 import matplotlib.pyplot as plt
 
+#----------------------------------------------------------------------
+#Step 2: Identifying paths and functions
 
 pathExp = '/Users/leongedzo/python_pers/stock_data_cleaned/'
 ExpName = 'NYSE_stationary_lags/' #'Test 10/'
@@ -19,13 +23,14 @@ ExpName = 'NYSE_stationary_lags/' #'Test 10/'
 pathImp = '/Users/leongedzo/python_pers/stock_data_cleaned/'
 ImpName = 'NYSE correlations 0.7/'
 
-# ----------------------------------------------------------------------
-
 def namestr(obj, namespace):
     return [name for name in namespace if namespace[name] is obj]
 
 def left(s, amount):
     return s[:amount]
+
+#----------------------------------------------------------------------
+#Step 3: For every stock perform correlation analysis with every other stock data (with original data and 4 lags). Save results to a folder.
 
 k = 0
 filelist = []
